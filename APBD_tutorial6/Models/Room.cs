@@ -10,5 +10,4 @@ public class Room
     public bool HasProjector;
     public bool IsActive;
 
-
 }
