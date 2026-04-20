@@ -1,13 +1,23 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace APBD_tutorial6.Models;
 
 public class Room
 {
-    public int Id;
-    public string Name;
-    public string BuildingCode;
-    public int Floor;
-    public int Capacity;
-    public bool HasProjector;
-    public bool IsActive;
+    public int Id { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+
+    [Required]
+    public string BuildingCode { get; set; }
+
+    public int Floor { get; set; }
+
+    [Range(1, int.MaxValue, ErrorMessage = "Capacity must be greater than zero")]
+    public int Capacity { get; set; }
+
+    public bool HasProjector { get; set; }
+    public bool IsActive { get; set; }
 
 }
